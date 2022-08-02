@@ -1,0 +1,135 @@
+.card {
+    background: #ffebe6;
+    border-radius: 0.5em;
+    padding: 1.5em 0.5em;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5em;
+    width: 100%;
+    animation: flyIn 1s ease-out forwards;
+    position: relative;
+}
+
+@keyframes flyIn {
+    0% {
+        opacity: 0;
+        top: 5rem;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.rankContainer {
+    display: flex;
+    width: 2.5em;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1em;
+    font-size: 1.25em;
+    flex: none;
+}
+
+.rank {
+    color: #888;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 6em;
+    margin-right: 1em;
+}
+
+.userImage {
+    border-radius: 50%;
+    display: block;
+    width: 5em;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    flex: none;
+    object-position: center;
+    z-index: 1;
+    box-shadow: 0 0 0.5em #0003;
+    background: white;
+}
+
+
+.progressBar {
+    content: "";
+    position: absolute;
+    display: block;
+    /*background: white;*/
+    --background: white;
+    --percentage: 0%;
+    background: conic-gradient(var(--background) 0%, var(--background) var(--percentage), transparent var(--percentage), transparent 100%);
+    width: 6em;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    filter: drop-shadow(0 0 0.5em #0003);
+}
+
+.username {
+    font-size: 1.25em;
+    flex: 1;
+    overflow: hidden;
+    display: block;
+    font-weight: 600;
+    color: var(--secondary);
+    width: 5rem;
+}
+
+.score {
+    flex: none;
+    width: 4em;
+    display: flex;
+    font-size: 1.25em;
+    justify-content: center;
+    color: var(--secondary);
+}
+
+
+.l-8, .l-7 {
+    --background: white;
+}
+
+.l-6, .l-5 {
+    --background: #ffe07f;
+}
+
+.l-4, .l-3 {
+    --background: #7ebdff;
+}
+
+.l-2, .l-1 {
+    --background: #a180ff;
+}
+
+.l1, .l2 {
+    --background: #696969;
+}
+
+.l-7, .l-5, .l-3, .l-1, .l2 {
+    filter: saturate(2) drop-shadow(0 0 0.5em #0003);
+}
+
+.card:first-of-type {
+    background: #fced9d;
+}
+
+.card:nth-of-type(2) {
+    background: #e7e7e7;
+}
+
+.card:nth-of-type(3) {
+    background: #ffdcbe;
+}
+
+@media only all and (min-width: 360px) {
+    .card:is(:nth-of-type(1), :nth-of-type(2), :nth-of-type(3)) {
+        display: none;
+    }
+}

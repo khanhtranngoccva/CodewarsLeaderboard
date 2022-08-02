@@ -1,0 +1,128 @@
+.crown {
+    display: inline-flex;
+    width: 5em;
+    aspect-ratio: 1/1;
+    /*outline: 1px solid;*/
+    justify-content: center;
+    align-items: center;
+    column-gap: 17.5%;
+    position: absolute;
+    top: -4.5em;
+    /*left: -0.4em;*/
+    transform-origin: 25% 95%;
+    filter: drop-shadow(0 0 0.25em var(--background));
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: ease-out;
+        transform-origin: 25% 95%;
+    }
+
+    15% {
+        transform: rotate(-10deg);
+        animation-timing-function: ease-in;
+    }
+
+    30% {
+        transform: rotate(0);
+        animation-timing-function: ease-out;
+        transform-origin: 25% 95%;
+    }
+
+    31% {
+        transform: rotate(0);
+        animation-timing-function: ease-out;
+        transform-origin: 75% 95%;
+    }
+
+    45% {
+        transform: rotate(10deg);
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: rotate(0);
+        transform-origin: 75% 95%;
+    }
+
+    100% {
+        transform: rotate(0);
+        transform-origin: 25% 95%;
+    }
+}
+
+
+
+/*.triangle:nth-of-type(3) {*/
+/*    z-index: 20;*/
+/*    content: "";*/
+/*    display: block;*/
+/*    width: 50%;*/
+/*    height: 100%;*/
+/*    left: 50%;*/
+/*    position: absolute;*/
+
+/*}*/
+
+.triangle {
+    height: 75%;
+    aspect-ratio: 1/1.5;
+    background: var(--background);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    transform-origin: 50% 100%;
+    position: absolute;
+}
+
+.triangle:nth-of-type(2) {
+    transform: scaleY(0.8) skewX(30deg);
+    filter: brightness(1.07);
+}
+
+.triangle:nth-of-type(3) {
+    transform: scaleY(0.8) skewX(-30deg);
+    filter: brightness(1.15);
+}
+
+.base {
+    position: absolute;
+    top: 90%;
+    width: 50%;
+    height: 5%;
+    background: var(--background);
+}
+
+.circle {
+    background: var(--background);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 20%;
+    top: -12.5%;
+    position: relative;
+}
+
+.circle.left {
+    filter: brightness(1.06);
+}
+
+.circle.right {
+    filter: brightness(1.12);
+}
+
+.circle.center {
+    top: -30%;
+}
+
+.firstPlace {
+    --background: var(--gold);
+}
+
+.secondPlace {
+    --background: var(--silver);
+}
+
+.thirdPlace {
+    --background: var(--bronze);
+}

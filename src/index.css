@@ -1,0 +1,45 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --secondary: #444;
+  --primary: black;
+  --gold: gold;
+  --silver: #d9d9d9;
+  --bronze: #bb6f40;
+}
+
+html {
+  font-family: Lato, system-ui;
+  font-size: 0.5rem;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: white;
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+@media only all and (min-width: 480px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media only all and (min-width: 720px) {
+  html {
+    font-size: 1rem;
+  }
+}

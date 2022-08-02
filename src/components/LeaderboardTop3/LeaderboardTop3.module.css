@@ -1,0 +1,53 @@
+.top3 {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 1rem;
+    max-width: 58rem;
+    margin-inline: auto;
+    height: 100%;
+    width: 50%;
+    padding-inline: 1rem;
+}
+
+.top3Container {
+    position: relative;
+    display: none;
+    height: 20rem;
+}
+
+.top3SubContainer {
+    position: absolute;
+    padding: 8rem 2rem 2rem;
+    overflow: hidden;
+    background: #ffa1a1;
+    border-radius: 0 0 50% 50%;
+    width: 200%;
+    height: 25rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.parentContainer {
+    overflow-x: clip;
+}
+
+
+@media only all and (min-width: 360px) {
+    .top3Container {
+        display: block;
+    }
+}
+
+@media only all and (min-width: 480px) {
+    .top3Container {
+        display: block;
+    }
+}
+
+@media only all and (min-width: 640px) {
+    .top3 {
+        column-gap: 2rem;
+        padding-inline: 2rem;
+    }
+}
+

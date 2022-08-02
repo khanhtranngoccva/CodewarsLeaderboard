@@ -1,0 +1,80 @@
+.sword {
+    margin: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: rotate 3s linear infinite;
+    font-size: 0.3em;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+/*@keyframes plunge {*/
+/*    0% {*/
+/*        transform: none;*/
+/*    }*/
+
+/*    30% {*/
+/*        transform: translateY(-2rem) rotate(180deg);*/
+/*        animation-timing-function: ease-in;*/
+/*    }*/
+
+/*    35% {*/
+/*        transform: rotate(180deg);*/
+/*    }*/
+
+/*    60% {*/
+/*        transform: rotate(180deg);*/
+/*    }*/
+
+/*    100% {*/
+/*        transform: none;*/
+/*    }*/
+/*}*/
+
+.blade {
+    width: 3em;
+    height: 7.5em;
+    background: linear-gradient(90deg, #d7d7d7 50%, #ececec 50%);
+    --vClip1: 30%;
+    --vClip2: 80%;
+    clip-path: polygon(50% 0%, 100% var(--vClip1), var(--vClip2) 100%, calc(100% - var(--vClip2)) 100%, 0% var(--vClip1));
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.handleTop {
+    width: 4.5em;
+    height: 0.75em;
+    background: gold;
+    border-radius: 10% / 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.handleTop::before {
+    content: "";
+    width: 0.5em;
+    aspect-ratio: 1/1;
+    background: red;
+    border-radius: 50%;
+}
+
+.handle {
+    width: 1.5em;
+    height: 3em;
+    border-radius: 0 0 50% 50% / 0 0 25% 25%;
+    background: repeating-linear-gradient(30deg, transparent 0%, transparent 10%, #830000 10%, #830000 20%) brown;
+}
