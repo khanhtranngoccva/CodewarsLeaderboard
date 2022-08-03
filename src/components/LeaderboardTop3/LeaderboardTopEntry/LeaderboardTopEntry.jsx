@@ -3,7 +3,7 @@ import {useState} from "react";
 import getJSON from "../../../helpers/getJSON.js";
 import getCWLevelPercentage from "../../../helpers/getCWRankPercentage.js";
 import defaultImage from "../../../helpers/defaultImage.js";
-import CSSCrown from "../../CSSCrown/CSSCrown.jsx";
+import CSSCrown from "../../CSSIcons/CSSCrown/CSSCrown.jsx";
 
 export default function LeaderboardTopEntry(props) {
     const [imageSRC, loadCardWithImage] = useState();

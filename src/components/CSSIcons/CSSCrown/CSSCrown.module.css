@@ -7,10 +7,10 @@
     align-items: center;
     column-gap: 17.5%;
     position: absolute;
-    top: -4.5em;
+    top: -4.9em;
     /*left: -0.4em;*/
-    transform-origin: 25% 95%;
-    filter: drop-shadow(0 0 0.25em var(--background));
+    transform-origin: 25% 100%;
+    /*filter: drop-shadow(0 0 0.25em var(--background));*/
     animation: bounce 2s infinite;
 }
 
@@ -18,7 +18,7 @@
     0% {
         transform: rotate(0);
         animation-timing-function: ease-out;
-        transform-origin: 25% 95%;
+        transform-origin: 25% 100%;
     }
 
     15% {
@@ -29,13 +29,13 @@
     30% {
         transform: rotate(0);
         animation-timing-function: ease-out;
-        transform-origin: 25% 95%;
+        transform-origin: 25% 100%;
     }
 
     31% {
         transform: rotate(0);
         animation-timing-function: ease-out;
-        transform-origin: 75% 95%;
+        transform-origin: 75% 100%;
     }
 
     45% {
@@ -45,12 +45,12 @@
 
     60% {
         transform: rotate(0);
-        transform-origin: 75% 95%;
+        transform-origin: 75% 100%;
     }
 
     100% {
         transform: rotate(0);
-        transform-origin: 25% 95%;
+        transform-origin: 25% 100%;
     }
 }
 
@@ -88,10 +88,11 @@
 
 .base {
     position: absolute;
-    top: 90%;
+    top: 92%;
     width: 50%;
-    height: 5%;
+    height: 8%;
     background: var(--background);
+    display: none;
 }
 
 .circle {

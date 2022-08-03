@@ -36,8 +36,10 @@ export default function LeaderboardCard(props) {
         toDisplay = <td className={classes.score}>{props.userdata[displayCriteria.criteria1]}</td>
     }
 
+    const standingText = "#" + props.standing;
+
     return <tr className={classes.card}>
-        <td className={classes.rankContainer}><span className={classes.rank}>{props.standing}</span></td>
+        <td className={classes.rankContainer}><span className={classes.rank} style={{fontSize: `${4 / standingText.length}em`}}>{standingText}</span></td>
         <td className={classes.imageContainer}>
             <div className={`${classes.progressBar} ${classes["l" + props.userdata.rank]}`} style={{"--percentage": `${props.userdata.percentage * 100}%`}}></div>
             <img className={classes.userImage} src={imageSRC || defaultImage} alt={props.userdata.username}></img>

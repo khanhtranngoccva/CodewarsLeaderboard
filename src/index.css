@@ -5,9 +5,11 @@
 :root {
   --secondary: #444;
   --primary: black;
-  --gold: gold;
-  --silver: #d9d9d9;
-  --bronze: #bb6f40;
+  --gold: #ffde23;
+  --silver: #ececec;
+  --bronze: #a8460b;
+  --accent1: #ffa1a1;
+  --accent2: #ffebe6;
 }
 
 html {

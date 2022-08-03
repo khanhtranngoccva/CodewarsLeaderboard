@@ -3,7 +3,7 @@ import LeaderboardSubtable from "./LeaderboardSubtable/LeaderboardSubtable.jsx";
 import {useState} from "react";
 import InfiniteScroll from 'react-infinite-scroller';
 import classes from "./Leaderboard.module.css"
-import CSSSword from "../CSSSword/CSSSword";
+import CSSSword from "../CSSIcons/CSSSword/CSSSword";
 import LeaderboardTop3 from "../LeaderboardTop3/LeaderboardTop3";
 
 export default function Leaderboard() {
@@ -14,7 +14,7 @@ export default function Leaderboard() {
     });
 
     const config = {
-        criteria1: "honor",
+        criteria1: "score",
         criteria2: "javascript",
     }
 
@@ -73,8 +73,7 @@ export default function Leaderboard() {
         getNewPage();
         return <table></table>;
     } else {
-        return <div>
-            <InfiniteScroll loadMore={getNewPage} hasMore={!(curData.endOfList)}>
+        return <InfiniteScroll loadMore={getNewPage} hasMore={!(curData.endOfList)}>
                 <LeaderboardTop3 top3entries={curData.data.slice(0, 3)} criteria={config}></LeaderboardTop3>
                 <table className={classes.leaderboardTable}>
                     <LeaderboardSubtable leaderboard={curData.data} criteria={config}></LeaderboardSubtable>
@@ -86,6 +85,5 @@ export default function Leaderboard() {
                     </div>
                 }
             </InfiniteScroll>
-        </div>
     }
 }

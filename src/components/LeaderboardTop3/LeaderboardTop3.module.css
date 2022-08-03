@@ -12,17 +12,17 @@
 .top3Container {
     position: relative;
     display: none;
-    height: 20rem;
+    height: 22rem;
 }
 
 .top3SubContainer {
     position: absolute;
-    padding: 8rem 2rem 2rem;
+    padding: 10rem 2rem 2rem;
     overflow: hidden;
     background: #ffa1a1;
     border-radius: 0 0 50% 50%;
     width: 200%;
-    height: 25rem;
+    height: 28rem;
     left: 50%;
     transform: translateX(-50%);
 }

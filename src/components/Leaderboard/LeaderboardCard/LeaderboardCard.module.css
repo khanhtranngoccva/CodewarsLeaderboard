@@ -23,13 +23,17 @@
 
 .rankContainer {
     display: flex;
-    width: 2.5em;
+    width: 3em;
     justify-content: center;
     align-items: center;
     column-gap: 1em;
     font-size: 1.25em;
     flex: none;
 }
+
+/*.rank::before {*/
+/*    content: "#";*/
+/*}*/
 
 .rank {
     color: #888;
@@ -86,7 +90,7 @@
     flex: none;
     width: 4em;
     display: flex;
-    font-size: 1.25em;
+    font-size: 1.5em;
     justify-content: center;
     color: var(--secondary);
 }
