@@ -64,14 +64,3 @@
 }
 
 
-:is(.slash1, .slash2)::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 130%;
-    outline: 3px solid blue;
-}
-
-
-
-
