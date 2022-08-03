@@ -15,17 +15,19 @@ async function getCurrentLeaderboard(req, res) {
     let sliceArgs;
     if (!page) sliceArgs = [undefined];
     else sliceArgs = [(page - 1) * 100, page * 100];
-    console.log(sliceArgs);
 
     const startTime = performance.now();
-    const leaderboardHistory = await leaderboards.find(leaderboardID ? {
+    const latestLeaderboard = await leaderboards.findOne(leaderboardID ? {
         _id: new ObjectID(leaderboardID)
-    } : undefined).sort({updatedAt: "descending"}).toArray();
+    } : undefined, {
+        sort: {
+            updatedAt: -1
+        }
+    });
     const endTime = performance.now();
 
     console.log("[PERF] Time taken for database querying:", (endTime - startTime) / 1000 + "s");
 
-    const latestLeaderboard = leaderboardHistory[0];
     const latestLeaderboardID = latestLeaderboard._id;
 
     // Naive sorting in JS and I don't like it.

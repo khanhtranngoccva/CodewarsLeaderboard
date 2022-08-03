@@ -1,8 +1,9 @@
 const {mongoClient} = require("../../config.cjs");
-const mongodb = require("mongodb")
 
 const memberData = mongoClient.db("memberData");
+
 const leaderboards = memberData.collection("leaderboards");
+const leaderboardsLTS = memberData.collection("leaderboardsLTS");
 const profilePictures = memberData.collection("profilePictures");
 
-module.exports = {memberData, leaderboards, profilePictures};
+module.exports = {memberData, leaderboards, profilePictures, leaderboardsLTS};

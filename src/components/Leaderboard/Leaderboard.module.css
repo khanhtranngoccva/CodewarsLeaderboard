@@ -11,3 +11,9 @@
     column-gap: 1em;
     margin-block: 0.5em;
 }
+
+.leaderboardContainer {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

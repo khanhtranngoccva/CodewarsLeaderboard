@@ -1,7 +1,7 @@
 const CLAN_NAME = '#100Devs - leonnoel.com/twitch';
 
 const getJSON = require("./getJSON.cjs");
-const {leaderboards} = require("./collections.cjs");
+const {leaderboards, leaderboardsLTS, memberData} = require("./collections.cjs");
 
 async function synchronize() {
     let result = [];
@@ -37,6 +37,7 @@ async function synchronize() {
     };
 
     await leaderboards.insertOne(leaderboard);
+    await leaderboardsLTS.insertOne(leaderboard);
 
     console.log("[SYNC] Synchronization success.");
 }

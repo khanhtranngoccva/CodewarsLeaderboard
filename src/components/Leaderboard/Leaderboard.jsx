@@ -1,34 +1,30 @@
 import getJSON from "../../helpers/getJSON.js";
 import LeaderboardSubtable from "./LeaderboardSubtable/LeaderboardSubtable.jsx";
-import {useState} from "react";
+import {useState, useRef} from "react";
 import InfiniteScroll from 'react-infinite-scroller';
 import classes from "./Leaderboard.module.css"
 import CSSSword from "../CSSIcons/CSSSword/CSSSword";
 import LeaderboardTop3 from "../LeaderboardTop3/LeaderboardTop3";
+import {assertDeepStrictEquals} from "../../helpers/testHelpers.js";
 
-export default function Leaderboard() {
+export default function Leaderboard(props) {
     const [curData, changeData] = useState({
         data: [],
         pageToLoad: 1,
         id: undefined,
     });
 
-    const config = {
-        criteria1: "score",
-        criteria2: "javascript",
-    }
-
     function reload() {
         changeData({
             data: [],
             pageToLoad: 1,
             id: undefined,
-        });
+        })
     }
 
     function getNewPage() {
         console.log(curData.id);
-        getData(Object.assign({page: curData.pageToLoad, id: curData.id}, config));
+        getData(Object.assign({page: curData.pageToLoad, id: curData.id}, props.config));
     }
 
     async function getData(parameters = {}) {
@@ -68,15 +64,24 @@ export default function Leaderboard() {
         });
     }
 
+    const prevProps = useRef(null);
+    if (!assertDeepStrictEquals(prevProps.config, props.config)) {
+        prevProps.config = props.config;
+        console.log(props.config)
+        reload();
+        return <div></div>;
+    }
+
     // Empty. Starts fetching.
     if (!curData.data.length) {
         getNewPage();
-        return <table></table>;
+        return <div></div>;
     } else {
-        return <InfiniteScroll loadMore={getNewPage} hasMore={!(curData.endOfList)}>
-                <LeaderboardTop3 top3entries={curData.data.slice(0, 3)} criteria={config}></LeaderboardTop3>
+        return <div className={classes.leaderboardContainer}>
+            <InfiniteScroll loadMore={getNewPage} hasMore={!(curData.endOfList)} useWindow={false}>
+                <LeaderboardTop3 top3entries={curData.data.slice(0, 3)} criteria={props.config}></LeaderboardTop3>
                 <table className={classes.leaderboardTable}>
-                    <LeaderboardSubtable leaderboard={curData.data} criteria={config}></LeaderboardSubtable>
+                    <LeaderboardSubtable leaderboard={curData.data} criteria={props.config}></LeaderboardSubtable>
                 </table>
                 {
                     curData.endOfList ? null :
@@ -85,5 +90,6 @@ export default function Leaderboard() {
                     </div>
                 }
             </InfiniteScroll>
+        </div>
     }
 }

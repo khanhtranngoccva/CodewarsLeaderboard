@@ -5,6 +5,7 @@ import getCWLevelPercentage from "../../../helpers/getCWRankPercentage.js";
 import defaultImage from "../../../helpers/defaultImage.js";
 
 
+
 export default function LeaderboardCard(props) {
     const [imageSRC, loadCardWithImage] = useState();
 
