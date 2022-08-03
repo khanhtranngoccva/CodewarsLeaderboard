@@ -5,7 +5,8 @@ const getUserInfo = require("./api/userInfo/scanUserInfo.cjs");
 const {updatePFPURLs} = require("./api/userInfo/updatePFPFiles.cjs");
 
 synchronize();
-setInterval(synchronize, 3600 * 1000);
+updatePFPURLs();
+setInterval(synchronize, 300 * 1000);
 setInterval(updatePFPURLs, 60 * 1000);
 
 app.get("/api/getLeaderboard", getCurrentLeaderboard);
