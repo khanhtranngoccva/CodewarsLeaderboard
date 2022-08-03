@@ -1,0 +1,77 @@
+.loader {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    --symmetryOffset: 6.75em;
+}
+
+.slash1 {
+    font-size: 1.5em;
+    --initial: rotate(45deg);
+    transform: var(--nudge) var(--initial);
+    animation: slash1 2s infinite;
+    transform-origin: 50% 130%;
+    position: absolute;
+    --nudge: translate(calc(var(--symmetryOffset) * -1), -3em);
+    /*left: calc(50% - var(--symmetryOffset));*/
+    /*left: 50%;*/
+}
+
+@keyframes slash1 {
+    0% {
+        animation-timing-function: ease-out;
+        transform: var(--nudge) var(--initial);
+    }
+
+    40% {
+        animation-timing-function: ease-in;
+        transform: var(--nudge) rotate(5deg);
+    }
+
+    50% {
+        transform: var(--nudge) var(--initial);
+    }
+}
+
+.slash2 {
+    font-size: 1.5em;
+    --initial: rotate(-45deg);
+    transform: var(--nudge) var(--initial);
+    animation: slash2 2s infinite;
+    transform-origin: 50% 130%;
+    position: absolute;
+    --nudge: translate(calc(var(--symmetryOffset) * 1), -3em);
+    /*left: calc(50% + var(--symmetryOffset));*/
+}
+
+@keyframes slash2 {
+    0% {
+        animation-timing-function: ease-out;
+        transform: var(--nudge) var(--initial);
+    }
+
+    40% {
+        animation-timing-function: ease-in;
+        transform: var(--nudge) rotate(-5deg);
+    }
+
+    50% {
+        transform: var(--nudge) var(--initial);
+    }
+}
+
+
+:is(.slash1, .slash2)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 130%;
+    outline: 3px solid blue;
+}
+
+
+
+

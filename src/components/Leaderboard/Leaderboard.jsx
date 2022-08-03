@@ -6,6 +6,7 @@ import classes from "./Leaderboard.module.css"
 import CSSSword from "../CSSIcons/CSSSword/CSSSword";
 import LeaderboardTop3 from "../LeaderboardTop3/LeaderboardTop3";
 import {assertDeepStrictEquals} from "../../helpers/testHelpers.js";
+import Loader from "../Loader/Loader";
 
 export default function Leaderboard(props) {
     const [curData, changeData] = useState({
@@ -69,13 +70,13 @@ export default function Leaderboard(props) {
         prevProps.config = props.config;
         console.log(props.config)
         reload();
-        return <div></div>;
+        return <Loader></Loader>;
     }
 
     // Empty. Starts fetching.
     if (!curData.data.length) {
         getNewPage();
-        return <div></div>;
+        return <Loader></Loader>;
     } else {
         return <div className={classes.leaderboardContainer}>
             <InfiniteScroll loadMore={getNewPage} hasMore={!(curData.endOfList)} useWindow={false}>
