@@ -1,4 +1,22 @@
 .navbar {
     z-index: 1;
     flex: none;
+    background: var(--accent1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    color: var(--darkPrimary);
+    font-weight: 600;
+    font-size: 3em;
+    transition: font-size 0.25s ;
+}
+
+.sortSelector {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
 }

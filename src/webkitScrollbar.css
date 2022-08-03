@@ -6,13 +6,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent1);
+    background: var(--accent2);
     border-radius: 200rem;
     border: 0.25rem solid transparent;
     background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--accent2);
+    background: var(--accent1);
     /*display: none;*/
 }

@@ -5,6 +5,8 @@
 :root {
   --secondary: #444;
   --primary: black;
+  --darkPrimary: white;
+  --background: white;
   --gold: #ffde23;
   --silver: #ececec;
   --bronze: #a8460b;
