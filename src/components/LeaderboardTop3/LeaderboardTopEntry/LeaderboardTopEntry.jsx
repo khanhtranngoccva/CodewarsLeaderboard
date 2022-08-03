@@ -19,7 +19,7 @@ export default function LeaderboardTopEntry(props) {
     }
 
     async function getPFP(cwUserID) {
-        const requestURL = new URL("http://" + location.host + "/api/getUserInfo/" + cwUserID);
+        const requestURL = new URL("https://" + location.host + "/api/getUserInfo/" + cwUserID);
         let result;
         try {
             result = (await getJSON(requestURL.toString())).data.profilePictureURL;
