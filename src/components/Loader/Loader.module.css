@@ -26,12 +26,12 @@
         transform: var(--nudge) var(--initial);
     }
 
-    40% {
+    30% {
         animation-timing-function: ease-in;
         transform: var(--nudge) rotate(5deg);
     }
 
-    50% {
+    40% {
         transform: var(--nudge) var(--initial);
     }
 }
@@ -44,7 +44,7 @@
     transform-origin: 50% 130%;
     position: absolute;
     --nudge: translate(calc(var(--symmetryOffset) * 1), -3em);
-    /*left: calc(50% + var(--symmetryOffset));*/
+    animation-delay: 1s;
 }
 
 @keyframes slash2 {
@@ -53,12 +53,12 @@
         transform: var(--nudge) var(--initial);
     }
 
-    40% {
+    30% {
         animation-timing-function: ease-in;
         transform: var(--nudge) rotate(-5deg);
     }
 
-    50% {
+    40% {
         transform: var(--nudge) var(--initial);
     }
 }
