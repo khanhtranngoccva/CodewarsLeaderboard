@@ -22,9 +22,16 @@ const mongoClient = new mongodb.MongoClient(process.env.MONGODB_CONNECTION_STRIN
     serverApi: mongodb.ServerApiVersion.v1,
 });
 
-mongoClient.connect().then(client => {
-    console.log(process.env.MONGODB_CONNECTION_STRING);
-    app.listen(port, () => console.log("Server ready."));
-});
+function connect() {
+    mongoClient.connect().then(client => {
+        console.log(process.env.MONGODB_CONNECTION_STRING);
+        app.listen(port, () => console.log("Server ready."));
+    }).catch(e => {
+        console.log(e);
+        setTimeout(connect, 1000);
+    });
+}
+
+connect();
 
 module.exports = {app, mongoClient};

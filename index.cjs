@@ -5,7 +5,6 @@ const getUserInfo = require("./api/userInfo/scanUserInfo.cjs");
 const {updatePFPURLs} = require("./api/userInfo/updatePFPFiles.cjs");
 
 synchronize();
-updatePFPURLs();
 setInterval(synchronize, 3600 * 1000);
 setInterval(updatePFPURLs, 60 * 1000);
 
