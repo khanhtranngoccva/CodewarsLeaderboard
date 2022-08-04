@@ -4,14 +4,14 @@ import Select from "react-select";
 const selectStyles = {
     menu: (provided, state) => ({
         ...provided,
-        width: "20em",
+        width: "22em",
         color: "var(--primary)",
         background: "var(--background)",
         marginTop: 0,
     }),
     control: (provided, state) => ({
         ...provided,
-        width: "20em",
+        width: "22em",
         fontSize: "1rem",
         minHeight: "0",
         background: "var(--background)",
