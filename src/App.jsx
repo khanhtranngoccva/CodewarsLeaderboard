@@ -25,7 +25,7 @@ function App() {
             {value: "score", label: "By rank and overall score"},
             {value: "languages", label: "By language score"},
         ], {
-            placeholder: "Select sorting method",
+            placeholder: "Sorting method (default by honor)",
         }),
         new SortConfig("criteria2", [
             {value: "javascript", label: "JavaScript"},
@@ -36,7 +36,7 @@ function App() {
             enableCondition: function () {
                 return config.criteria1 === "languages"
             },
-            placeholder: "Select language",
+            placeholder: "Select language (default JavaScript)",
         }),
     ]
 

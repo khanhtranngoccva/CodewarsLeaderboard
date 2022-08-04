@@ -29,7 +29,7 @@ export default function Leaderboard(props) {
     }
 
     async function getData(parameters = {}) {
-        console.log("Getting data for page", parameters.page)
+        console.log("Getting data for page", parameters.page);
         const requestURL = new URL("https://" + location.host + "/api/getLeaderboard");
 
         function setParam(paramName) {
