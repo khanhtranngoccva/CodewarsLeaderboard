@@ -86,9 +86,9 @@ export default function Leaderboard(props) {
                 </table>
                 {
                     curData.endOfList ? null :
-                    <div className={classes.swordContainer}>
-                        <CSSSword></CSSSword>Loading more folx from #100devs!
-                    </div>
+                        <div className={classes.swordContainer}>
+                            <CSSSword></CSSSword>Loading more folx from #100devs!
+                        </div>
                 }
             </InfiniteScroll>
         </div>

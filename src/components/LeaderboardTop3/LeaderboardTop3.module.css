@@ -6,6 +6,7 @@
     margin-inline: auto;
     height: 100%;
     width: 50%;
+    transition: column-gap 0.25s ease;
     padding-inline: 1rem;
 }
 

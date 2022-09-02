@@ -25,7 +25,7 @@ const mongoClient = new mongodb.MongoClient(process.env.MONGODB_CONNECTION_STRIN
 function connect() {
     mongoClient.connect().then(client => {
         console.log(process.env.MONGODB_CONNECTION_STRING);
-        app.listen(port, () => console.log("Server ready."));
+        app.listen(port, () => console.log("Server ready at port", port));
     }).catch(e => {
         console.log(e);
         setTimeout(connect, 1000);
